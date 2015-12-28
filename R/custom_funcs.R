@@ -66,6 +66,7 @@ staticPerfMeasures <- function(list_models, g,
     }
 
     return(list(data = df_out, plots = plots_out))
+
 }
 
 ################################################################ CONFUSION MATRIX #################################

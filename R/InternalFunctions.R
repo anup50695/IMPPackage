@@ -1,20 +1,4 @@
 
-'3. Precision round it'
-'4. Format it'
-'5. Add Rmd doc'
-'6. data.table'
-'7. other error handling code'
-'8. Check calculations'
-'9. Define threshold; equal to/ greater than'
-'10. Update description..hows it helpful '
-'11. Test interactive with more than 2 models'
-'12. remove return_fun_value from shiny'
-'13.dont explicity mention == T'
-'14. 1 additional repitions with reps argument'
-'15. add show all unique option in the interactive version'
-
-
-
 error_handler <- function(list_models,arg,method) {
 
   if (!is.numeric(arg)) {
