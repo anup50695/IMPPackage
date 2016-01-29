@@ -17,6 +17,9 @@
 #' is drawn from each dataset (if nrow(dataset) > 5000). Default sample size of 5000 can be adjusted by changing the value of this
 #' argument
 #'
+#' @param perf_measures Select the required performance evaluation and validation measure/s, from the following
+#' options - c('hosmer','calibration','lift','concord'). Default option is All
+#'
 #' @return A nested list with 2 components - a list of dataframes and a list of plots - containing
 #' the outcomes of the different performance evaluations carried out.
 
@@ -29,7 +32,7 @@
 #' model_2 <- glm(Species ~ Sepal.Width, data=iris, family = binomial)
 #' df1 <- data.frame(model_1$y,fitted(model_1))
 #' df2 <- data.frame(model_2$y,fitted(model_2))
-#' staticPerfMeasures(list(df1,df2),g=10)
+#' staticPerfMeasures(list(df1,df2),g=10, perf_measures = c("hosmer","lift"))
 
 staticPerfMeasures <- function(list_models, g,
                                perf_measures = c('hosmer','calibration','lift','concord'),sample_size_concord = 5000) {
@@ -81,6 +84,7 @@ staticPerfMeasures <- function(list_models, g,
 #' @param reps Performance measures derived from the confusion matrix (Accuracy, TPR, FPR & Precision) are
 #' computed for a range of different probability thresholds. The "reps" argument controls the number of
 #' different probability thresholds considered (threshold range given by the sequence - seq(0,1,1/reps))
+#' @param reps.all.unique Logical; If set to True, Performance measures are computed for each unique Probability value
 #'
 #' @return If reps = NULL, the output will be a list with 2 components - a confusion matrix
 #' dataframe and a dataframe with the values of the computed metrics (Accuracy,TPR,FPR,Precision). If reps argument is supplied, an

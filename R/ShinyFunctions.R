@@ -53,7 +53,7 @@
 #'    out }
 #'  \dontrun{
 #'  #This will launch a Shiny App
-#'  interPerfMeasures (model_function=glm_model,data=iris,y="Species")}
+#'  interPerfMeasures (model_function = glm_model,data=iris,y="Species")}
 #'
 
 interPerfMeasures <- function(list_models,sample_size_concord = 5000,model_function = NULL,data = NULL,y = NULL) {

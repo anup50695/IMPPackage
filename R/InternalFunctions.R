@@ -245,7 +245,7 @@ conf_mat_metrics <- function(x, t) {
     TPR <- round(TPR * 100, 2)
     FPR <- matrix[2, 1]/sum(matrix[, 1])
     FPR <- round(FPR * 100, 2)
-    Prec <- matrix[2, 1]/sum(matrix[2, ])
+    Prec <- matrix[2, 2]/sum(matrix[2, ])
     Prec <- round(Prec * 100, 2)
     output <- data.frame(Threshold = t, Acc = Acc, TPR = TPR, FPR = FPR, Prec = Prec)
     output
